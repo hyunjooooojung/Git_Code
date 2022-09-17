@@ -20,7 +20,7 @@ people = [
 
 
 # 20살 미만인 사람들을 제외시켜 adult에
-adult = [x for x in people if x[2] >= 20]
+people = [x for x in people if x[2] >= 20]
 # 나이 순으로 정렬
-adult.sort(key=lambda x: x[2])
-pprint(adult)
+people(key=lambda x: x[2])
+pprint(people)
