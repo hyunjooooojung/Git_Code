@@ -22,8 +22,16 @@ users = [
 def get_filter_user(users):
     filter_users = []
     for i in range(15):
-        avg = (users[i]["math_score"] + users[i]["science_score"] + users[i]["english_score"] + users[i]["social_score"]) / 4
-        users[i].update({"avg_score" : avg})
+        avg = (users[i]['math_score'] + users[i]['science_score'] + users[i]['english_score'] + users[i]['social_score']) / 4
+        
+        # update를 하면 각 줄에 avg_score이 추가된다.
+        # ! update를 해도 append를 해도 결과값은 같게 출력된다!
+        # 근데 내가 만들고 싶었던 건 update를 했을때의 users였기 때문에 update로 돌아가게 할 것이다!
+        users[i].update({'avg_score' : avg})
+        
+        # append를 하면 avg_score 세트가 하나더 추가된다.
+        users.append({'avg_score' : avg})
+        
         
         if avg > 70:
             name = users[i]['name']
